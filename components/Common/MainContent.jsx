@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { NextSeo } from 'next-seo';
 import { withRouter } from 'next/router';
-import { PageNames } from '../utils/constants';
-import { getPageSlug } from '../utils/helper-functions';
+import { PageNames } from '../../utils/constants';
+import { getPageSlug } from '../../utils/helper-functions';
 
 const MainContent = ({ children, router, className }) => {
   const pageSlug = getPageSlug(router.pathname);
