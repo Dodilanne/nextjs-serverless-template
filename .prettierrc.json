@@ -1,7 +1,0 @@
-{
-  "trailingComma": "es5",
-  "singleQuote": true,
-  "arrowParens": "avoid",
-  "jsx-a11y/anchor-is-valid": false,
-  "endOfLine": "auto"
-}
