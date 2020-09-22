@@ -12,7 +12,11 @@ export const memoize = <Props>(component: FunctionComponent<Props>, props: (keyo
     return _.isMatch(prev, comparedObject);
   });
 
-export const getPageSlug = (pathname: any): keyof typeof PageNames =>
-  pathname.length < 2 ? 'home' : pathname.replace('/', '');
+export const getPageSlug = (pathname: string): keyof typeof PageNames => {
+  const isHome = pathname.length < 2;
+  const pageSlug = (isHome ? 'home' : pathname.replace('/', '')) as keyof typeof PageNames;
+
+  return PageNames[pageSlug] ? pageSlug : 'home';
+};
 
 export default { memoize, getPageSlug };
