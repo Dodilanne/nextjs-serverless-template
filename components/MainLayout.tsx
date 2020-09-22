@@ -2,8 +2,8 @@ import React, { ReactNode } from 'react';
 import { NextSeo } from 'next-seo';
 import { motion, HTMLMotionProps } from 'framer-motion';
 import { useRouter } from 'next/dist/client/router';
-import { getPageSlug } from '../../utils/helper-functions';
-import { PageNames } from '../../utils/constants';
+import { getPageSlug } from 'utils/helper-functions';
+import { PageNames } from 'utils/constants';
 
 const fadeAnimation: HTMLMotionProps<'div'> = {
   initial: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import StylesTester from '../components/common/StylesTester';
+import StylesTester from 'parts/common/StylesTester';
 
 const Home = () => {
   return (

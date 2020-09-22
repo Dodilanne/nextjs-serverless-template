@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import App from 'next/app';
 import { AnimatePresence } from 'framer-motion';
-import MainLayout from '../components/common/MainLayout';
+import MainLayout from 'components/MainLayout';
 import { DefaultSeo } from 'next-seo';
 import whyDidYouRender from '@welldone-software/why-did-you-render';
-import useSeoConfig from '../seo.config';
-import '../scss/main.scss';
+import useSeoConfig from 'seo.config';
+import 'scss/main.scss';
 
 if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
   whyDidYouRender(React);
