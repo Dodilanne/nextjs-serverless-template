@@ -12,11 +12,18 @@ export const memoize = <Props>(component: FunctionComponent<Props>, props: (keyo
     return _.isMatch(prev, comparedObject);
   });
 
-export const getPageSlug = (pathname: string): keyof typeof PageNames => {
-  const isHome = pathname.length < 2;
-  const pageSlug = (isHome ? 'home' : pathname.replace('/', '')) as keyof typeof PageNames;
+export const getIDsMap = (size: number, startAt = 0) => {
+  const array = Array(size)
+    .fill(0)
+    .map((_, index) => index + startAt);
 
-  return PageNames[pageSlug] ? pageSlug : 'home';
+  return array;
 };
 
-export default { memoize, getPageSlug };
+export const getPageSlug = (pathname: any): keyof typeof PageNames =>
+  pathname.length < 2 ? 'home' : pathname.replace('/', '');
+
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+export const noop = () => {};
+
+export default { memoize, getPageSlug, noop };
