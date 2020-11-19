@@ -11,7 +11,26 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
   whyDidYouRender(React);
 }
 
+const updateVirtualHeight = () => {
+  const vh = window.innerHeight * 0.01;
+  [
+    ['vh', vh],
+    ['actual-vh', Math.max(5.5, vh)],
+  ].forEach(([name, value]) => {
+    document.documentElement.style.setProperty(`--${name}`, `${value}px`);
+  });
+};
+
 class CustomApp extends App {
+  componentDidMount() {
+    updateVirtualHeight();
+    window.addEventListener('resize', updateVirtualHeight);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', updateVirtualHeight);
+  }
+
   render() {
     const { Component, pageProps, router } = this.props;
     const seoConfig = useSeoConfig();

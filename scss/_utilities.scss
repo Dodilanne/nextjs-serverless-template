@@ -1,1 +1,42 @@
-// TODO: Add global functions or mixins here
+@function height_percentage($percentage) {
+  @return calc(var(--actual-vh, 1vh) * #{$percentage});
+}
+
+// Targets pre-chromium Microsoft Edge browsers
+@mixin ms_edge {
+  @supports (-ms-ime-align:auto) {
+    @content;
+  }
+}
+
+// Takes up all of actual height
+@mixin full_height($with_min_height: true) {
+  height: calc(var(--vh, 1vh) * 100);
+  @if ($with_min_height) {
+    min-height: $min-page-height;
+  }
+}
+
+@mixin min_max_full_height() {
+  min-height: calc(var(--vh, 1vh) * 100);
+  max-height: calc(var(--vh, 1vh) * 100);
+}
+
+@mixin show_mobile {
+  &.desktop {
+    display: none !important;
+  }
+  &.mobile {
+    display: flex !important;
+  }
+}
+
+@mixin show_desktop {
+  &.desktop {
+    display: flex !important;
+  }
+  &.mobile {
+    display: none !important;
+  }
+}
+
