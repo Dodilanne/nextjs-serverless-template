@@ -8,12 +8,13 @@ const StylesTester = () => {
   const style = { marginTop: 10 };
 
   return (
-    <div className="content-wrapper" style={{ paddingTop: 70 }}>
+    <div className="content-wrapper" style={{ paddingTop: 20 }}>
       {DefinedFonts.map((Font: any) => (
         <Font key={`font-test-${Font}`} style={style}>
           {`${Font}: ${content}`}
         </Font>
       ))}
+      <div style={{ height: 20 }} />
       {ButtonClasses.map(className => (
         <a key={`btn-test-${className}`} style={style} className={`btn ${className}`}>
           {className ? `Button of class '${className}'` : 'Button with no class'}

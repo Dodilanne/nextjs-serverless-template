@@ -17,6 +17,7 @@
     "paths": {
       "hooks/*": ["utils/hooks/*"],
       "contexts/*": ["utils/contexts/*"],
+      "types/*": ["utils/types/*"],
     }
   },
   "exclude": ["node_modules"],

@@ -4,6 +4,7 @@ import { motion, HTMLMotionProps } from 'framer-motion';
 import { useRouter } from 'next/dist/client/router';
 import { getPageSlug } from 'utils/helper-functions';
 import { PageNames } from 'utils/constants';
+import { DeviceContextProvider } from 'contexts/DeviceContext';
 
 const fadeAnimation: HTMLMotionProps<'div'> = {
   initial: {
@@ -32,14 +33,14 @@ const MainLayout = ({ children }: Props) => {
   const seoProps = { title: pageName };
 
   return (
-    <>
+    <DeviceContextProvider>
       <NextSeo {...seoProps} />
       <motion.div {...fadeAnimation}>
         <div className="main-content">
           <div className="content-container">{children}</div>
         </div>
       </motion.div>
-    </>
+    </DeviceContextProvider>
   );
 };
 

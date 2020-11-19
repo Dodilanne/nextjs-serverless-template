@@ -1,17 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
-import StylesTester from 'parts/common/StylesTester';
+import StylesTester from 'parts/dev/StylesTester';
+import DeviceMonitor from 'parts/dev/DeviceMonitor';
 
 const Home = () => {
   return (
-    <div className="container">
-      <h1 className="title">
-        Welcome to the home page{' '}
+    <div className="container" style={{ paddingTop: 30 }}>
+      <div className="content-wrapper">
+        <h1 className="title">Welcome to the home page </h1>
         <Link href="/about">
-          <a>Go to About</a>
+          <a style={{ marginTop: 20, textDecoration: 'underline' }}>Go to About</a>
         </Link>
-        <StylesTester />
-      </h1>
+      </div>
+      <StylesTester />
+      <DeviceMonitor />
     </div>
   );
 };
