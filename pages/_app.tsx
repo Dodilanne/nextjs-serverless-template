@@ -5,7 +5,7 @@ import MainLayout from 'components/MainLayout';
 import { DefaultSeo } from 'next-seo';
 import whyDidYouRender from '@welldone-software/why-did-you-render';
 import useSeoConfig from 'seo.config';
-import 'scss/main.scss';
+import 'styles/main.scss';
 
 if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
   whyDidYouRender(React);
