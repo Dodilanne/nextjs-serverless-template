@@ -1,0 +1,10 @@
+{
+  "page-names": {
+    "home": "Accueil",
+    "about": "À propos"
+  },
+
+  "greetings": "Bienvenue sur la page {{pageName}}",
+
+  "current-locale": "Langue actuelle"
+}
