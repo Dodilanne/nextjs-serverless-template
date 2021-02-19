@@ -1,26 +1,11 @@
 import React, { ReactNode } from 'react';
 import { NextSeo } from 'next-seo';
-import { motion, HTMLMotionProps } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRouter } from 'next/dist/client/router';
+import { DeviceContextProvider } from 'contexts/DeviceContext';
 import { getPageSlug } from 'utils/helper-functions';
 import { PageNames } from 'utils/constants';
-import { DeviceContextProvider } from 'contexts/DeviceContext';
-
-const fadeAnimation: HTMLMotionProps<'div'> = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-  },
-  exit: {
-    opacity: 0,
-  },
-  transition: {
-    duration: 0.4,
-    ease: 'easeInOut',
-  },
-};
+import pageAnimation from 'utils/page-animation';
 
 interface Props {
   children: ReactNode;
@@ -35,7 +20,7 @@ const MainLayout = ({ children }: Props) => {
   return (
     <DeviceContextProvider>
       <NextSeo {...seoProps} />
-      <motion.div {...fadeAnimation}>
+      <motion.div style={{ height: '100%' }} {...pageAnimation}>
         <div className="main-content">
           <div className="content-container">{children}</div>
         </div>
