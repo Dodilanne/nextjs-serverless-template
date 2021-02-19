@@ -36,7 +36,7 @@ class CustomApp extends App {
     const seoConfig = useSeoConfig();
 
     return (
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence key={router.route} exitBeforeEnter>
         <Fragment key={router.route}>
           <DefaultSeo {...seoConfig} />
           <MainLayout>
