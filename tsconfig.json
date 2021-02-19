@@ -15,9 +15,12 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "hooks/*": ["utils/hooks/*"],
-      "contexts/*": ["utils/contexts/*"],
-      "types/*": ["utils/types/*"],
+      "api/*": ["foundation/api/*"],
+      "config/*": ["foundation/config/*"],
+      "contexts/*": ["foundation/contexts/*"],
+      "hooks/*": ["foundation/hooks/*"],
+      "types/*": ["foundation/types/*"],
+      "utils/*": ["foundation/utils/*"]
     }
   },
   "exclude": ["node_modules"],
