@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint --ext .ts,.tsx  ./**",
+    "lint:fix": "eslint --ext .ts,.tsx ./** --fix"
   },
   "dependencies": {
     "@welldone-software/why-did-you-render": "^6.0.0-rc.1",
